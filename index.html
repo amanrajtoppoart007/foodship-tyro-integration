@@ -159,8 +159,8 @@ function doPurchaseWithTyroUI() {
     $("#customerReceipt").html('');
     const amount = $("#amount").val();
     const cashout = $("#cashout").val();
-    const isReceipt = $("#is_receipt").val()===1 ? true: false;
-    const isSurcharge = $("#is_surcharge").val() ===1 ? true:false;
+    const isReceipt = $("#is_receipt").val() === 1;
+    const isSurcharge = $("#is_surcharge").val() === 1;
     const iClient = new system[0].IClientWithUI(apiKey, posProductInfo);
     iClient.initiatePurchase({amount: amount, cashout: cashout,  integratedReceipt: isReceipt, enableSurcharge: isSurcharge}, {
         receiptCallback: function (receipt) {
@@ -335,8 +335,8 @@ $().ready(function () {
     <li id="refundWithTyroUI"><a href="javascript:showRefundWithTyroUI()">Refund</a></li>
 </ul>
 <div id="purchaseWithTyroUIContent" class="hidden">
-     <input id="is_receipt" type="hidden" name="isReceipt" value="1">
-     <input id="is_surcharge" type="hidden" name="isSurcharge" value="1">
+     <input id="is_receipt" type="hidden" name="isReceipt" value="0">
+     <input id="is_surcharge" type="hidden" name="isSurcharge" value="0">
     <div class="container-fluid">
         <div class="span3">
             <h4>Purchase</h4>
