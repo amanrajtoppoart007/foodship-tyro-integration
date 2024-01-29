@@ -78,8 +78,8 @@ function setConfig(params)
     {
         $("#amount").val(res.data.amount);
         $("#cashout").val(res.data.cashout);
-        $("#is_receipt").val(res.data.isReceipt===true? 1:0);
-        $("#is_surcharge").val(res.data.isSurcharge===true? 1:0);
+        $("#is_receipt").val(res.data.isReceipt===true? 'yes':'no');
+        $("#is_surcharge").val(res.data.isSurcharge===true? 'yes':'no');
        setTimeout(()=>{
              doPurchaseWithTyroUI();
        },1000);
@@ -159,8 +159,8 @@ function doPurchaseWithTyroUI() {
     $("#customerReceipt").html('');
     const amount = $("#amount").val();
     const cashout = $("#cashout").val();
-    const isReceipt = $("#isReceipt").val() === "1";
-    const isSurcharge = $("#isSurcharge").val() === "1";
+    const isReceipt = $("#isReceipt").val() === "yes";
+    const isSurcharge = $("#isSurcharge").val() === "yes";
     const iClient = new system[0].IClientWithUI(apiKey, posProductInfo);
     iClient.initiatePurchase({amount: amount, cashout: cashout,  integratedReceipt: isReceipt, enableSurcharge: isSurcharge}, {
         receiptCallback: function (receipt) {
