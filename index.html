@@ -191,8 +191,8 @@ function doPurchaseWithTyroUI() {
                 action:'transaction-complete',
                 data: response,
                 extraData: {
-                    isReceipt,
-                    isSurcharge
+                    isReceipt:isReceipt,
+                    isSurcharge:isSurcharge
                 }
             }
             sendResponse(params);
