@@ -78,8 +78,10 @@ function setConfig(params)
     {
         $("#amount").val(res.data.amount);
         $("#cashout").val(res.data.cashout);
-        $("#is_receipt").val(res.data.isReceipt===true? 'yes':'no');
-        $("#is_surcharge").val(res.data.isSurcharge===true? 'yes':'no');
+        const isReceipt = res.data.isReceipt===true? 'yes':'no';
+        const isSurcharge = res.data.isSurcharge===true? 'yes':'no';
+        $("#isReceipt").val(isReceipt);
+        $("#isSurcharge").val(isSurcharge);
        setTimeout(()=>{
              doPurchaseWithTyroUI();
        },1000);
