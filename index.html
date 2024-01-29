@@ -184,9 +184,16 @@ function doPurchaseWithTyroUI() {
             }
             sendResponse(params);
             }
+
+            const isReceipt = $("#is_receipt").val();
+            const isSurcharge = $("#is_surcharge").val();
             const params = {
                 action:'transaction-complete',
                 data: response,
+                extraData: {
+                    isReceipt,
+                    isSurcharge
+                }
             }
             sendResponse(params);
         }
