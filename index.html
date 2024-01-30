@@ -72,6 +72,10 @@ function setConfig(params)
     {
         return;
     }
+      if(message.data===undefined || message.data===null)
+    {
+        return;
+    }
  const res = JSON.parse(message.data);
     if(res.action==='set-config')
     {
