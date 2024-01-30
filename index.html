@@ -90,7 +90,7 @@ function setConfig(params)
 
     if(res.action==='init-refund')
     {
-         $("#refund_amount").val(res.data.amount);
+       $("#refund_amount").val(res.data.amount);
        setTimeout(()=>{
              doRefundWithTyroUI();
        },1000);
@@ -378,7 +378,7 @@ $().ready(function () {
             <h4>Refund</h4>
             <div class="mt15">
                 <label for="refund_amount">Amount:</label>
-                <input id="refund_amount" type="text" placeholder="Amount" name="amount" value="10208">
+                <input id="refund_amount" type="text" placeholder="Amount" name="refund_amount" value="">
             </div>
             <div class="mt15">
                 <button type="button" class="btn btn-primary" onclick="doRefundWithTyroUI()">Process</button>
