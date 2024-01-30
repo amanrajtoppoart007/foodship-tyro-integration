@@ -68,6 +68,10 @@ function setConfig(params)
 
  async function onWebViewMessage (message)
 {
+    if(message===undefined || message===null)
+    {
+        return;
+    }
  const res = JSON.parse(message.data);
     if(res.action==='set-config')
     {
