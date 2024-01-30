@@ -72,7 +72,7 @@ function setConfig(params)
     {
         return;
     }
-      if(message.data===undefined || message.data===null)
+      if(message.data===undefined || message.data===null||message?.data?.length<=0)
     {
         return;
     }
