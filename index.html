@@ -123,17 +123,6 @@
              $("#refundWithTyroUIContent").hide();
          }
 
-
-
-         function showPairing() {
-             showConfigurationPage();
-             const iClient = new system[1].IClient(apiKey, posProductInfo);
-             iClient.getConfiguration(function(config) {
-                 $("#mid").val(mid>0?mid:config.mid);
-                 $("#tid").val(tid>0?tid:config.tid);
-             });
-         }
-
          function doPurchaseWithTyroUI() {
              $("#result").html('');
              $("#merchantReceipt").html('');
@@ -293,7 +282,7 @@
          }
 
          $().ready(function () {
-               showPairing();
+             showConfigurationPage();
               init();
          });
 
