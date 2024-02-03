@@ -129,8 +129,8 @@
              showConfigurationPage();
              const iClient = new system[1].IClient(apiKey, posProductInfo);
              iClient.getConfiguration(function(config) {
-                 $("#mid").val(config.mid);
-                 $("#tid").val(config.tid);
+                 $("#mid").val(mid>0?mid:config.mid);
+                 $("#tid").val(tid>0?tid:config.tid);
              });
          }
 
